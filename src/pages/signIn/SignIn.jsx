@@ -78,7 +78,7 @@ const SignIn = () => {
             <div>
               <p className="text-center text-red-500">{error}</p>
             </div>
-            <p>
+            <p className="text-center">
               Don't have an account ? Please{" "}
               <Link to="/register" className="text-blue-600 underline">
                 Register
