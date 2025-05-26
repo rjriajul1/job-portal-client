@@ -22,7 +22,7 @@ const Register = () => {
     setError('')
     registerUser(email, password)
       .then((result) => {
-        if (result.user) {
+        if (result?.user) {
           Swal.fire({
             position: "top-end",
             icon: "success",
