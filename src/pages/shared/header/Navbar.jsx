@@ -1,6 +1,13 @@
 import React from 'react';
+import { NavLink } from 'react-router';
+
 
 const Navbar = () => {
+
+    const links = <>
+       <li><NavLink className={({isActive})=> isActive ? 'text-blue-500 underline' : 'hover:text-blue-500 hover:underline'} to='/'>Home</NavLink></li>
+        
+    </>
     return (
        <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
@@ -11,36 +18,22 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <div className='flex items-center gap-2'>
+      <img src={'navbar_logo.png'} alt="" />
+      <h1 className=" font-bold text-2xl">Job Portal</h1>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
+      {links}
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <NavLink to='/register' className="mr-3 underline hover:text-blue-500">Register</NavLink>
+    <NavLink to='/signIn' className="btn btn-primary hover:bg-black">Sign In</NavLink>
   </div>
 </div>
     );
