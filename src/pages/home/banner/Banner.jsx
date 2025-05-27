@@ -4,7 +4,7 @@ import team2 from '../../../assets/team/team_2.jpg'
 import { motion } from "motion/react"
 const Banner = () => {
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero max-w-10/12 mx-auto  bg-linear-to-bl from-violet-500 to-fuchsia-500 rounded-2xl">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="flex-1 ">
             <motion.img
@@ -26,10 +26,10 @@ const Banner = () => {
            animate={{scale:1}}
            transition={{duration:5}}
             className=" text-2xl font-bold"><motion.span 
-            animate={{color:['#ff5733','#337cff','#33ffa2','#ff33f0']}}
+            animate={{color:['#333446','#337cff','#33ffa2','#71C0BB','#F2F2F2']}}
             transition={{duration:10,delay:3, repeat:Infinity }}
             >Find Your Next Great Opportunity!</motion.span></motion.h1>
-          <p className="py-6">
+          <p className="py-6 text-white dark:text-black">
            Explore thousands of job listings from top companies. Connect with employers, build your profile, and take the next step in your career today.
           </p>
           <motion.button
