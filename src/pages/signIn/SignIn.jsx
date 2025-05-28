@@ -10,6 +10,7 @@ const SignIn = () => {
   const [error, setError] = useState("");
   const { signInUser, signInWithGoogle } = use(AuthContext);
   const location = useLocation();
+  console.log(location);
   const navigate = useNavigate();
 
   const handleSignIn = (e) => {

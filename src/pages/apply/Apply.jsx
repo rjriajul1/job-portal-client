@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import AuthHook from "../../hook/AuthHook";
 import applyNow from '../../assets/lotties/apply.json'
 import Lottie from "lottie-react";
@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 const Apply = () => {
   const { id: jobId } = useParams();
   const { user } = AuthHook();
+  const navigate = useNavigate()
 
   const handleApply = (e) => {
     e.preventDefault()
@@ -18,17 +19,18 @@ const Apply = () => {
     const linkedin = form.linkedin.value;
     const github = form.github.value;
     const resume = form.resume.value;
-    const applicant = {
-        email: user.email,
-        jobId,
-        linkedin,
-        github,
-        resume
-    }
+
+   const application = {
+  email: user.email,
+  jobId,
+  linkedin,
+  github,
+  resume
+};
     // push data database
-    axios.post('http://localhost:5000/apply', {
-        applicant
-    })
+    axios.post('http://localhost:5000/apply', 
+        application
+    )
     .then(result=>{
         
         if(result.data.insertedId){
@@ -37,9 +39,10 @@ const Apply = () => {
                       icon: "success",
                       title: "Your application successful",
                       showConfirmButton: false,
-                      timer: 1500,
+                      timer: 3000,
                     });
                     form.reset();
+                    navigate('/')
         }
     })
     .catch(error=>{
@@ -58,7 +61,7 @@ const Apply = () => {
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
-            <h1 className="text-2xl font-bold text-center">Apply Now !!</h1>
+            <h1 className="text-2xl font-bold text-center">Apply Now for this job: <Link className="text-blue-500 underline" to={`/jobDetails/${jobId}`}>details</Link></h1>
             <form onSubmit={handleApply} className="fieldset">
               <label className="label">Linkedin</label>
               <input type="url" name="linkedin" required className="input" placeholder="Linkedin URL" />

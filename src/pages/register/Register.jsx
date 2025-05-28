@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import registerLottie from "../../assets/lotties/register.json";
 import Lottie from "lottie-react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext";
 import Swal from "sweetalert2";
 
 const Register = () => {
   const { registerUser } = useContext(AuthContext);
   const [error,setError] = useState('')
+  const navigate = useNavigate()
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -23,6 +24,7 @@ const Register = () => {
     registerUser(email, password)
       .then((result) => {
         if (result?.user) {
+          navigate('/')
           Swal.fire({
             position: "top-end",
             icon: "success",

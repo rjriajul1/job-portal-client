@@ -11,7 +11,9 @@ const Navbar = () => {
     signOutUser()
       .then((result) => {
         console.log(result);
-        navigate('/')
+        // if(user === null){
+        //   navigate('/')
+        // }
         setUser(null);
       })
       .catch((error) => {
@@ -30,6 +32,18 @@ const Navbar = () => {
           to="/"
         >
           Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 underline"
+              : "hover:text-blue-500 hover:underline"
+          }
+          to="/myApplication"
+        >
+          My application
         </NavLink>
       </li>
     </>
