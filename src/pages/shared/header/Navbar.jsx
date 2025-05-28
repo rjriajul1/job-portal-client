@@ -1,15 +1,17 @@
 import React, { use } from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, signOutUser, setUser } = use(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignOut = () => {
     signOutUser()
       .then((result) => {
         console.log(result);
+        navigate('/')
         setUser(null);
       })
       .catch((error) => {
