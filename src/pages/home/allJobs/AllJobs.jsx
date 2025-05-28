@@ -21,7 +21,8 @@ const AllJobs = ({jobsPromise}) => {
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
                 {jobs.map(job=><Job key={job._id} job={job}></Job>)}
               </div>
-              <div className='flex justify-center' onClick={()=>{
+              <div className='flex justify-center'>
+                <button onClick={()=>{
                 setShow(!show)
                 if(show){
                    return window.scrollTo({
@@ -29,8 +30,7 @@ const AllJobs = ({jobsPromise}) => {
                     behavior:'smooth'
                    })
                 }
-              }}>
-                <button className='btn btn-primary text-xl w-52 my-10'>{show ? 'Show Less' : 'Show All'}</button>
+              }} className='btn btn-primary text-xl w-52 my-10'>{show ? 'Show Less' : 'Show All'}</button>
               </div>
         </div>
     );

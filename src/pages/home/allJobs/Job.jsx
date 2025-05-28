@@ -15,8 +15,8 @@ const Job = ({ job }) => {
   } = job || {};
   
   return (
-    <motion.div whileHover={{ scale: 1.1 }} className="card bg-base-100 border">
-      <div className="card bg-base-100 shadow-sm">
+    <motion.div whileHover={{ scale: 1.1 }} className="card bg-base-100 border grid">
+      <div className="card bg-base-100">
         <div className="flex items-start gap-5">
           <figure>
             <img className="w-1`6" src={company_logo} alt="Shoes" />
@@ -29,7 +29,7 @@ const Job = ({ job }) => {
             </p>
           </div>
         </div>
-        <div className="card-body">
+        <div className="card-body  ">
           <h2 className="card-title">
             {title}
             <div className="badge badge-secondary">NEW</div>

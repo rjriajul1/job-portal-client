@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Banner from './banner/Banner';
 import AllJobs from './allJobs/AllJobs';
 
@@ -9,7 +9,9 @@ const Home = () => {
         <div>
             <title>Home</title>
             <Banner/>
-            <AllJobs jobsPromise={jobsPromise}/>
+           <Suspense>
+             <AllJobs jobsPromise={jobsPromise}/>
+           </Suspense>
         </div>
     );
 };
