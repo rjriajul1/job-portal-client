@@ -3,6 +3,9 @@ import { useParams } from "react-router";
 import AuthHook from "../../hook/AuthHook";
 import applyNow from '../../assets/lotties/apply.json'
 import Lottie from "lottie-react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 
 const Apply = () => {
   const { id: jobId } = useParams();
@@ -17,12 +20,32 @@ const Apply = () => {
     const resume = form.resume.value;
     const applicant = {
         email: user.email,
-        id: jobId,
+        jobId,
         linkedin,
         github,
         resume
     }
-    
+    // push data database
+    axios.post('http://localhost:5000/apply', {
+        applicant
+    })
+    .then(result=>{
+        
+        if(result.data.insertedId){
+             Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Your application successful",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    });
+                    form.reset();
+        }
+    })
+    .catch(error=>{
+        toast.error(error);
+    })
+
   }
 
   return (
