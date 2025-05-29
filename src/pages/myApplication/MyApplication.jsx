@@ -5,7 +5,6 @@ import AuthHook from '../../hook/AuthHook';
 import { myApplicationPromise } from '../../api/ApplicaitonApi';
 
 
-
 const MyApplication = () => {
     const {user} = AuthHook();
     return (

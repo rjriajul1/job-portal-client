@@ -22,7 +22,7 @@ const JobDetails = () => {
         <div className="card-body">
             <div className="flex gap-3">
                 <figure>
-                    <img src={company_logo} alt="" />
+                    <img className="w-20 h-20 rounded-full" src={company_logo} alt="" />
                 </figure>
                 <div className="mt-2">
                      <h2 className="font-bold text-xl">{company}</h2>

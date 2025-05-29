@@ -19,7 +19,7 @@ const Job = ({ job }) => {
       <div className="card bg-base-100">
         <div className="flex items-start gap-5">
           <figure>
-            <img className="w-1`6" src={company_logo} alt="Shoes" />
+            <img className="w-16 h-16 rounded-full" src={company_logo} alt="Shoes" />
           </figure>
           <div>
             <h2 className="font-bold text-xl">{company}</h2>

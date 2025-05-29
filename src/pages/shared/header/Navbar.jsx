@@ -34,6 +34,18 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+         <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 underline"
+              : "hover:text-blue-500 hover:underline"
+          }
+          to="/jobPost"
+        >
+          Job Post
+        </NavLink>
+      </li>
       <li>
         <NavLink
           className={({ isActive }) =>
