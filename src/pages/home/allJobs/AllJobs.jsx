@@ -1,5 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import Job from "./job";
+import { motion } from "motion/react"
 
 const AllJobs = ({ jobsPromise }) => {
   const data = use(jobsPromise);
@@ -45,23 +46,27 @@ const AllJobs = ({ jobsPromise }) => {
       </div>
       <div className="flex justify-center">
         {show ? (
-          <button
+          <motion.button
+           whileHover={{scale: 1.1}}
+           whileTap={{scale:0.95}}
             onClick={() => {
               handleLess();
             }}
             className="btn btn-primary text-xl w-52 my-10"
           >
             show less
-          </button>
+          </motion.button>
         ) : (
-          <button
+          <motion.button
+           whileHover={{scale: 1.1}}
+          whileTap={{scale:0.95}}
             onClick={() => {
               handleShow();
             }}
             className="btn btn-primary text-xl w-52 my-10"
           >
             show all
-          </button>
+          </motion.button>
         )}
       </div>
     </div>

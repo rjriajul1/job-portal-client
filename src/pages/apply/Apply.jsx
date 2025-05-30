@@ -56,7 +56,7 @@ const Apply = () => {
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           
-          <Lottie style={{width: '400px'}} animationData={applyNow} loop={true}/>
+          <Lottie style={{width: '300px'}} animationData={applyNow} loop={true}/>
           
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

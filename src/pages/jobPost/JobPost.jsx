@@ -2,6 +2,7 @@ import React from "react";
 import AuthHook from "../../hook/AuthHook";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { motion } from "motion/react"
 const JobPost = () => {
   const { user } = AuthHook();
 
@@ -240,7 +241,7 @@ const JobPost = () => {
           <label className="label font-bold">hr-email</label>
           <input
             type="email"
-            name="hr-email"
+            name="hr_email"
             defaultValue={user.email}
             required
             className="input w-full"
@@ -249,7 +250,7 @@ const JobPost = () => {
           <label className="label font-bold">hr-name</label>
           <input
             type="text"
-            name="hr-name"
+            name="hr_name"
             required
             className="input w-full"
             placeholder="hr-name"
@@ -264,7 +265,9 @@ const JobPost = () => {
           <label className="label font-bold">deadline</label>
           <input type="date" name="date" required className="input w-full" />
         </fieldset>
-        <input
+        <motion.input
+          whileHover={{scale: 1.1}}
+          whileTap={{scale:0.95}}
           className="w-full btn text-xl font-bold hover:bg-green-500"
           type="submit"
           value="Add Job"

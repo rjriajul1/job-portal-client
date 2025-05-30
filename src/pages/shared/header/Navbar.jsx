@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { toast } from "react-toastify";
+import { motion } from "motion/react"
 
 const Navbar = () => {
   const { user, signOutUser, setUser } = use(AuthContext);
@@ -56,6 +57,18 @@ const Navbar = () => {
           to="/myApplication"
         >
           My application
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 underline"
+              : "hover:text-blue-500 hover:underline"
+          }
+          to="/myPostedJobs"
+        >
+          My Posted Jobs
         </NavLink>
       </li>
     </>
@@ -120,9 +133,12 @@ const Navbar = () => {
           </svg>
         </label>
         {user ? (
-          <button onClick={handleSignOut} className="btn">
+          <motion.button 
+           whileHover={{scale: 1.1}}
+          whileTap={{scale:0.95}}
+          onClick={handleSignOut} className="btn">
             Sign Out
-          </button>
+          </motion.button>
         ) : (
           <>
             <NavLink

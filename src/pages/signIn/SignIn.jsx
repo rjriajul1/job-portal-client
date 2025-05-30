@@ -65,7 +65,7 @@ const SignIn = () => {
         <div className="text-center lg:text-left">
           <Lottie
             animationData={SignInLottie}
-            style={{ width: "400px" }}
+            style={{ width: "350px" }}
             loop={true}
           />
         </div>
