@@ -48,18 +48,20 @@ useEffect(()=>{
         if(currentUser){
         setUser(currentUser)
         }
+        
         if(currentUser?.email){
-          const userData = {email: currentUser.email};
-          axios.post('http://localhost:5000/jwt', userData, {
+          const userEmail = {email: currentUser.email}
+          axios.post('http://localhost:5000/jwt', userEmail, {
             withCredentials: true
           })
-          .then(res=>{
+          .then(res=> {
             console.log(res.data);
           })
-          .catch(error=>{
+          .catch(error=> {
             console.log(error);
           })
         }
+        
         setLoading(false)
     })
     return ()=> {

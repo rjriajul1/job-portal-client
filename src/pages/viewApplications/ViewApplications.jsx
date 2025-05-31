@@ -17,7 +17,7 @@ const ViewApplications = () => {
               Swal.fire({
                       position: "top-end",
                       icon: "success",
-                      title: "Your status update  successfully",
+                      title: "Your status update successfully",
                       showConfirmButton: false,
                       timer: 1500,
                     });
