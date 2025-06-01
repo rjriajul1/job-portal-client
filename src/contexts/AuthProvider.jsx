@@ -13,7 +13,7 @@ import axios from "axios";
 const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [user,setUser] = useState(null)
-
+console.log(user);
   const googleProvider = new GoogleAuthProvider();
 
 //   console.log(user);
@@ -47,21 +47,7 @@ useEffect(()=>{
     const unSubscribe = onAuthStateChanged(auth, currentUser => {
         if(currentUser){
         setUser(currentUser)
-        }
-        
-        if(currentUser?.email){
-          const userEmail = {email: currentUser.email}
-          axios.post('http://localhost:5000/jwt', userEmail, {
-            withCredentials: true
-          })
-          .then(res=> {
-            console.log(res.data);
-          })
-          .catch(error=> {
-            console.log(error);
-          })
-        }
-        
+        } 
         setLoading(false)
     })
     return ()=> {

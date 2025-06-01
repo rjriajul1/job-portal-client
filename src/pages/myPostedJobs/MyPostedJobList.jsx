@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const MyPostedJobList = ({ jobsByEmailPromise }) => {
   const jobs = use(jobsByEmailPromise);
-  console.log(jobs);
+
   return (
     <div className="max-w-7xl mx-auto my-6">
       <h2 className="text-center font-bold text-xl my-6">
