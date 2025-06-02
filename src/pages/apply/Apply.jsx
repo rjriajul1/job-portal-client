@@ -28,7 +28,7 @@ const Apply = () => {
   resume
 };
     // push data database
-    axios.post('http://localhost:5000/apply', 
+    axios.post('https://job-portal-server-seven-iota.vercel.app/apply', 
         application
     )
     .then(result=>{

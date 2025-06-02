@@ -1,5 +1,5 @@
 export const myApplicationPromise = (email,accessToken) => {
-    return fetch(`http://localhost:5000/currentUserApplication?email=${email}`, {
+    return fetch(`https://job-portal-server-seven-iota.vercel.app/currentUserApplication?email=${email}`, {
         headers: {
             authorization: `Bearer ${accessToken}`
         }

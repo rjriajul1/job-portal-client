@@ -1,14 +1,16 @@
 import React, { Suspense } from 'react';
 import MyPostedJobList from './MyPostedJobList';
 import AuthHook from '../../hook/AuthHook';
-import { jobsByEmailPromise } from '../../api/JobsApi';
+import useJobsApi from '../../api/useJobsApi';
 
 const MyPostedJobs = () => {
     const {user} = AuthHook()
+    const {jobsByEmailPromise} = useJobsApi()
+  
     return (
         <div>
             <Suspense fallback={'loading...'}>
-                <MyPostedJobList jobsByEmailPromise={jobsByEmailPromise(user.email,user.accessToken)}></MyPostedJobList>
+                <MyPostedJobList jobsByEmailPromise={jobsByEmailPromise(user.email)}></MyPostedJobList>
             </Suspense>
         </div>
     );

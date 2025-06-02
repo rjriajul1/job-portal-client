@@ -35,7 +35,7 @@ const JobPost = () => {
 
     // job post and save data database
     
-    axios.post('http://localhost:5000/jobs',newJob)
+    axios.post('https://job-portal-server-seven-iota.vercel.app/jobs',newJob)
     .then(result=>{
       console.log(result.data);
       if(result.data.insertedId){

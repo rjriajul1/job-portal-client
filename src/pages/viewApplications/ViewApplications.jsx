@@ -10,7 +10,7 @@ const ViewApplications = () => {
   const handleStatusUpdate = (e,id) => {
     console.log(e.target.value,id);
 
-    axios.patch(`http://localhost:5000/applications/${id}`,{status: e.target.value})
+    axios.patch(`https://job-portal-server-seven-iota.vercel.app/applications/${id}`,{status: e.target.value})
     .then(data=> {
         console.log(data.data);
         if(data.data.modifiedCount){
