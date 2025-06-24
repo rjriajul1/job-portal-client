@@ -1,12 +1,52 @@
-# React + Vite
+# 💼 Job Portal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 Overview
+A full-stack Job Portal web application built with **React**, **Firebase**, and **Tailwind CSS**. Users can explore job opportunities, apply for jobs, and manage job postings. Employers can add, update, and delete jobs while authenticated users can view and apply with ease.
 
-Currently, two official plugins are available:
+🔗 [Live Website](https://your-live-link.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React (v19)
+- React Router (v7.6.1)
+- Tailwind CSS (v4.1.7)
+- DaisyUI (v5.0.37)
+- Firebase (v11.8.1)
+- Axios (v1.9.0)
+- Lottie React (v2.4.1)
+- Motion (v12.12.2)
+- React Icons (v5.5.0)
+- React Toastify (v11.0.5)
+- SweetAlert2 (v11.22.0)
+
+---
+
+## 🎯 Main Features
+
+- 🔐 Firebase Authentication (Login/Register)
+- 💼 Browse job listings
+- 📝 Apply to jobs (application stored in DB)
+- ➕ Post new jobs (secured for authenticated users)
+- ✏️ Update posted jobs
+- ❌ Delete jobs with confirmation
+- 👁️ View applied jobs by logged-in user
+- 🎨 Fully responsive UI using Tailwind CSS and DaisyUI
+- 🪄 Smooth animation with Motion & Lottie
+- 🔔 User-friendly toast and alert notifications
+
+---
+
+## 📦 Dependencies
+
+
+## How to run locally
+git clone https://github.com/rjriajul1/job-portal-client.git
+cd job-portal-client
+npm install
+npm run dev
+
+```bash
+npm install @tailwindcss/vite axios daisyui firebase lottie-react motion react-icons react-router react-toastify sweetalert2 tailwindcss
+
